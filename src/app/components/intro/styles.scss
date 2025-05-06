@@ -1,0 +1,107 @@
+
+
+.intro {
+    transition: opacity 2s ease;
+    display: flex;
+    flex-direction: column-reverse;
+    font-family: "Tuffy", sans-serif;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: opacity 2s ease;
+
+    
+  .intro.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  svg.mrm {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .text-outline {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2px;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    font-family: "Tuffy", sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    opacity: 0;
+  }
+
+  .text-fill {
+    fill: #ffffff;
+    font-family: "Tuffy", sans-serif;
+    font-size: 72px;
+  }
+
+  .animateM {
+    animation: draw 2s forwards;
+    animation-delay: 0s;
+  }
+
+  .animateR {
+    animation: draw 2s forwards;
+    animation-delay: 0.7s;
+  }
+
+  .animateM2 {
+    animation: draw 2s forwards;
+    animation-delay: 1s;
+  }
+
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 500;
+      opacity: 1;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  svg.leaf {
+    width: 1500px;
+    height: 150px;
+  }
+
+  svg.leaf path {
+    fill: none;
+    stroke: red;
+    stroke-width: 0;
+    stroke-dasharray: 8000;
+    stroke-dashoffset: 8000;
+    animation:
+      draw-leaf 4s ease-out forwards,
+      grow-width-leaf 4s ease-out forwards;
+  }
+
+  @keyframes draw-leaf {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes grow-width-leaf {
+    to {
+      stroke-width: 12;
+    }
+  }
+
+
+  }

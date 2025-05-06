@@ -1,0 +1,18 @@
+#info {
+    background: #e8e8e7;
+
+    a {
+        text-decoration: none;
+        background-color: #00ccff;
+        border: 2px solid #05a8d1;
+        color: black;
+        border-radius: 10px;
+        padding: 6px 15px;
+        margin: 10px 0;
+        transition: 0.3s all;
+
+        &:hover {
+            border-color: #00ccff;
+        }
+    }
+}
