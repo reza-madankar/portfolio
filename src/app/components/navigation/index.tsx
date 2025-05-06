@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './styles.scss';
 
 interface NavigationProps {
-  show: boolean;
+    show: boolean;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ show }) => {
@@ -62,13 +62,17 @@ const Navigation: React.FC<NavigationProps> = ({ show }) => {
         }, 500);
     };
 
+    useEffect(() => {
+        scrollToSection('info');
+    }, []);
+
     return (
         <nav className={show ? 'show' : ''}>
-            <a id="link-info" onClick={() => scrollToSection('info')} className="active">About Me</a>
-            <a id="link-experience" onClick={() => scrollToSection('experience')}>Experience</a>
-            <a id="link-education" onClick={() => scrollToSection('education')}>Education</a>
-            <a id="link-skills" onClick={() => scrollToSection('skills')}>Skills</a>
-            <a id="link-contactme" onClick={() => scrollToSection('contactme')}>Contact Me</a>
+            <a onClick={() => scrollToSection('info')} className="active">About Me</a>
+            <a onClick={() => scrollToSection('experience')}>Experience</a>
+            <a onClick={() => scrollToSection('education')}>Education</a>
+            <a onClick={() => scrollToSection('skills')}>Skills</a>
+            <a onClick={() => scrollToSection('contactme')}>Contact Me</a>
         </nav>
     );
 };
